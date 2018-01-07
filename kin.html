@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="css/cleaned_css.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+
+
+
+</head>
+
+
+<body>
+
+
+
+    <div id="burger" onclick="openMenu()">&#9776;</div>
+
+    <div id="KinArticle" class="articles">
+        <h1 id="KinTitle" class="titleArticle"> Kin </h1>
+        <p id="kinSubtitle" class="subtitleArticle"> Mobile Application production </p>
+
+        <p id="KinKeyWords" class="KeyWordsArticle">
+
+            Conception / Business / Marketing / Design / Communication <br> <i>Group Project</i>
+
+        </p>
+
+        <p id="KinText" class="textArticle"> Conception of a new service and its mobile application. Business and Marketing researches such as business model, canvas, target, Customer journeys, potential partners and competitors. Creation from the design, prototype, user test to the promoting website. </p>
+
+        <div id="KinButton" class="ButtonArticle">
+            <a href="http://albertopachecommd.com/KINwebsite/index.html" target="_blank">
+                <p> VIEW WEBSITE </p>
+            </a>
+        </div>
+
+        <div id="KinDProgButton" class="ButtonArticle">
+            <a href="img/pdf/designprogram_KIN.pdf" target="_blank">
+                <p> DESIGN PROGRAM </p>
+            </a>
+        </div>
+
+        <div id="KinDGuideButton" class="ButtonArticle">
+            <a href="img/pdf/Kin_design%20guide.pdf" target="_blank">
+                <p> DESIGN GUIDE </p>
+            </a>
+        </div>
+
+        <div id="KinREPORTButton" class="ButtonArticle">
+            <a href="img/pdf/KIN_REPORT.pdf" target="_blank">
+                <p> BUSINESS REPORT </p>
+            </a>
+        </div>
+
+        <img  id="KinScreen" class="imagesArticle" src="img/resized/projects/Kin/kin_frontpage.png" alt="">
+
+<img  id="KinDesignStyle" class="imagesArticle" src="img/resized/projects/Kin/kin_design_style.png" alt="">
+
+       <img  id="KinDesignPrgrm" class="imagesArticle" src="img/resized/projects/Kin/kin_design_progrm.png" alt="">
+
+       <img  id="KinG" class="imagesArticle" src="img/resized/projects/Kin/animKIN_1.gif" alt="">
+
+
+
+
+
+        <div class="slides">
+
+
+
+            <a id="PreButton">&#10094;</a>
+            <a id="NextButton">&#10095;</a>
+
+            <div id="dots">
+  <div class="dot" id="dot1"></div>
+  <div class="dot" id="dot2"></div>
+  <div class="dot" id="dot3"></div>
+  <div class="dot" id="dot4"></div>
+</div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div id="menu">
+        <ul>
+            <a href="menu_fixed_try.html#all_projects"> HOME </a>
+
+            <a href="menu_fixed_try.html#ANIMATIONPROJECTS"> ANIMATION </a>
+            <a href="menu_fixed_try.html#DIGITALPROJECTS"> DIGITAL DESIGN </a>
+            <a href="menu_fixed_try.html#VIDEOSPROJECTS"> VIDEOS </a>
+            <a href="menu_fixed_try.html#ABOUT"> ABOUT </a>
+        </ul>
+
+        <a id="cross" onclick="closeMenu()">&times;</a>
+
+
+    </div>
+
+
+
+    <script type="text/javascript" src="js/articles.js"></script>
+
+    <script>
+
+        let buttonNext = document.querySelector("#NextButton");
+
+        let buttonPre = document.querySelector("#PreButton");
+
+        let slides = document.querySelector(".slides");
+
+        let dot1 = document.querySelector("#dot1");
+        let dot2 = document.querySelector("#dot2");
+        let dot3 = document.querySelector("#dot3");
+        let dot4 = document.querySelector("#dot4");
+
+        var counter = 1;
+
+        playPicture();
+
+        buttonNext.addEventListener('click', goNext);
+
+        buttonPre.addEventListener('click', goPrevious);
+
+
+
+        function goNext() {
+            console.log("Do Next Image");
+
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+            playPicture();
+        }
+
+        function goPrevious() {
+            console.log("Do Previous Image");
+            counter--;
+            if (counter < 1) {
+                counter = 4;
+            }
+            playPicture();
+        }
+
+        function playPicture() {
+            switch (counter) {
+                case 1:
+                    slides.style.backgroundImage="url(css/projects/Kin/kin_frontpage.png)";
+                     dot1.style.backgroundColor="#BCDDC7";
+                    dot2.style.backgroundColor="#0c0c37";
+                    dot3.style.backgroundColor="#0c0c37";
+                    dot4.style.backgroundColor="#0c0c37";
+
+                    break;
+
+                case 2:
+                    slides.style.backgroundImage="url(css/projects/Kin/kin_design_style.png)";
+                    dot1.style.backgroundColor="#0c0c37";
+                    dot2.style.backgroundColor="#BCDDC7";
+                    dot3.style.backgroundColor="#0c0c37";
+                    dot4.style.backgroundColor="#0c0c37";
+
+                    break;
+
+                case 3:
+                    slides.style.backgroundImage="url(css/projects/Kin/kin_design_progrm.png)";
+                    dot1.style.backgroundColor="#0c0c37";
+                    dot2.style.backgroundColor="#0c0c37";
+                    dot3.style.backgroundColor="#BCDDC7";
+                    dot4.style.backgroundColor="#0c0c37";
+                    break;
+
+                case 4:
+                    slides.style.backgroundImage="url(css/projects/Kin/animKIN_1.gif)";
+                    dot1.style.backgroundColor="#0c0c37";
+                    dot2.style.backgroundColor="#0c0c37";
+                    dot3.style.backgroundColor="#0c0c37";
+                    dot4.style.backgroundColor="#BCDDC7";
+
+                    break;
+
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

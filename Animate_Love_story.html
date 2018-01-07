@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="css/cleaned_css.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" >
+
+</head>
+
+
+<body>
+
+ <div id="burger" onclick="openMenu()">&#9776;</div>
+
+ <div id="JSLoveStoryArticle" class="articles">
+<h1 id="JSLoveStoryTitle" class="titleArticle"> Die &amp; Retry: a Love Story </h1>
+<p id="JSLoveStorySubtitle" class="subtitleArticle"> Animation </p>
+
+<p id="JSLoveStoryKeyWords" class="KeyWordsArticle">
+
+            Javascript <br> <i>Group Project</i>
+
+        </p>
+
+<p id="JSLoveStoryText" class="textArticle"> Part of an animation made with Javascript and its sequence diagram. Coding different events and functions was required. </p>
+
+<div id="JSLoveStoryButton" class="ButtonArticle">
+           <a href="http://mathildefrachon.com/kea/02_animation/2.2.3_Group_Animation/spritesheet.html" target="_blank">
+            <p> VIEW ANIMATION </p>
+            </a>
+        </div>
+
+<img  id="JSLoveStoryScreen" class="imagesArticle"  src="img/resized/projects/DieRetry/screen_love_story.jpg" alt="">
+
+<img  id="JSLoveStorySequenceDiagram" class="imagesArticle"  src="img/resized/projects/DieRetry/squence_diagram_love_story.png" alt="">
+
+
+
+<div class="slides">
+
+
+
+            <a id="PreButton">&#10094;</a>
+            <a id="NextButton">&#10095;</a>
+
+            <div id="dots">
+                <div class="dot" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+</div>
+
+
+<div id="menu">
+        <ul>
+            <a href="menu_fixed_try.html#all_projects" > HOME </a>
+
+            <a href="menu_fixed_try.html#ANIMATIONPROJECTS"> ANIMATION </a>
+            <a href="menu_fixed_try.html#DIGITALPROJECTS" > DIGITAL DESIGN </a>
+            <a href="menu_fixed_try.html#VIDEOSPROJECTS" > VIDEOS </a>
+            <a href="menu_fixed_try.html#ABOUT" > ABOUT </a>
+        </ul>
+
+         <a id="cross" onclick="closeMenu()">&times;</a>
+
+
+    </div>
+
+
+
+
+</body>
+
+<script type="text/javascript" src="js/articles.js"></script>
+
+<script>
+    let buttonNext = document.querySelector("#NextButton");
+
+    let buttonPre = document.querySelector("#PreButton");
+
+    let slides = document.querySelector(".slides");
+
+    let dot1 = document.querySelector("#dot1");
+    let dot2 = document.querySelector("#dot2");
+    let dot3 = document.querySelector("#dot3");
+    let dot4 = document.querySelector("#dot4");
+
+    var counter = 1;
+
+    playPicture();
+
+    buttonNext.addEventListener('click', goNext);
+
+    buttonPre.addEventListener('click', goPrevious);
+
+
+
+    function goNext() {
+        console.log("Do Next Image");
+
+        counter++;
+        if (counter > 2) {
+            counter = 1;
+        }
+        playPicture();
+    }
+
+    function goPrevious() {
+        console.log("Do Previous Image");
+        counter--;
+        if (counter < 1) {
+            counter = 2;
+        }
+        playPicture();
+    }
+
+    function playPicture() {
+        switch (counter) {
+            case 1:
+                slides.style.backgroundImage = "url(css/projects/DieRetry/screen_love_story.jpg)";
+                dot1.style.backgroundColor = "#BCDDC7";
+                dot2.style.backgroundColor = "#0c0c37";
+
+
+
+                break;
+
+            case 2:
+                slides.style.backgroundImage = "url(css/projects/DieRetry/squence_diagram_love_story.png)";
+                dot1.style.backgroundColor = "#0c0c37";
+                dot2.style.backgroundColor = "#BCDDC7";
+
+
+                break;
+
+            case 3:
+                slides.style.backgroundImage = "url(css/projects/Event/fuck%20winter%20pic-13.jpg)";
+                dot1.style.backgroundColor = "#0c0c37";
+                dot2.style.backgroundColor = "#0c0c37";
+
+                break;
+
+
+
+
+        }
+
+    }
+
+</script>
+
+</html>
+
+
+
+

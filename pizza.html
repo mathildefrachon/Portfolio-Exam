@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="css/cleaned_css.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+
+</head>
+
+
+<body>
+
+    <div id="burger" onclick="openMenu()">&#9776;</div>
+
+    <div id="PizzaArticle" class="articles">
+        <h1 id="PizzaTitle" class="titleArticle"> 1st Pizza Direct </h1>
+        <p id="PizzaSubtitle" class="subtitleArticle"> Rebuild a website </p>
+
+        <p id="PizzaKeyWords" class="KeyWordsArticle">
+
+            Design / HTML / CSS <br> <i>Group Project</i>
+
+        </p>
+
+        <p id="PizzaText" class="textArticle"> Existing website analysed and user tested in order to design a new version. Prototyping and coding of a mobile a desktop version. </p>
+
+        <div id="PizzaButton" class="ButtonArticle">
+            <a href="http://mathildefrachon.com/kea/01.WEB/1.10_GROUP15/index.html" target="_blank">
+                <p> VIEW WEBSITE </p>
+            </a>
+        </div>
+
+        <div id="PizzaPDFButton" class="ButtonArticle">
+            <a href="img/pdf/1.10_group15_presentationdocument.pdf" target="_blank">
+                <p> FINAL PDF </p>
+            </a>
+        </div>
+
+        <img id="PizzaScreen" class="imagesArticle" src="img/resized/projects/Pizza/pizza_screens.png" alt="">
+        <img id="PizzaPrototypes" class="imagesArticle" src="img/resized/projects/Pizza/pizza_prototypes.png" alt="">
+        <img id="PizzaAnalysis" class="imagesArticle" src="img/resized/projects/Pizza/pizza_analysis.png" alt="">
+        <img id="PizzaStyletile" class="imagesArticle" src="img/resized/projects/Pizza/pizza_styletile.png" alt="">
+
+        <div class="slides">
+
+
+
+            <a id="PreButton">&#10094;</a>
+            <a id="NextButton">&#10095;</a>
+
+            <div id="dots">
+                <div class="dot" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+                <div class="dot" id="dot3"></div>
+                <div class="dot" id="dot4"></div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div id="menu">
+        <ul>
+            <a href="menu_fixed_try.html#all_projects"> HOME </a>
+
+            <a href="menu_fixed_try.html#ANIMATIONPROJECTS"> ANIMATION </a>
+            <a href="menu_fixed_try.html#DIGITALPROJECTS"> DIGITAL DESIGN </a>
+            <a href="menu_fixed_try.html#VIDEOSPROJECTS"> VIDEOS </a>
+            <a href="menu_fixed_try.html#ABOUT"> ABOUT </a>
+        </ul>
+
+
+    </div>
+
+
+
+</body>
+
+<script type="text/javascript" src="js/articles.js"></script>
+
+
+<script>
+    let buttonNext = document.querySelector("#NextButton");
+
+    let buttonPre = document.querySelector("#PreButton");
+
+    let slides = document.querySelector(".slides");
+
+    let dot1 = document.querySelector("#dot1");
+    let dot2 = document.querySelector("#dot2");
+    let dot3 = document.querySelector("#dot3");
+    let dot4 = document.querySelector("#dot4");
+
+    var counter = 1;
+
+    playPicture();
+
+    buttonNext.addEventListener('click', goNext);
+
+    buttonPre.addEventListener('click', goPrevious);
+
+
+
+    function goNext() {
+        console.log("Do Next Image");
+
+        counter++;
+        if (counter > 4) {
+            counter = 1;
+        }
+        playPicture();
+    }
+
+    function goPrevious() {
+        console.log("Do Previous Image");
+        counter--;
+        if (counter < 1) {
+            counter = 4;
+        }
+        playPicture();
+    }
+
+    function playPicture() {
+        switch (counter) {
+            case 1:
+                slides.style.backgroundImage = "url(css/projects/Pizza/pizza_screens.png)";
+                dot1.style.backgroundColor = "#BCDDC7";
+                dot2.style.backgroundColor = "#0c0c37";
+                dot3.style.backgroundColor = "#0c0c37";
+                dot4.style.backgroundColor = "#0c0c37";
+
+                break;
+
+            case 2:
+                slides.style.backgroundImage = "url(css/projects/Pizza/pizza_prototypes.png)";
+                dot1.style.backgroundColor = "#0c0c37";
+                dot2.style.backgroundColor = "#BCDDC7";
+                dot3.style.backgroundColor = "#0c0c37";
+                dot4.style.backgroundColor = "#0c0c37";
+
+                break;
+
+            case 3:
+                slides.style.backgroundImage = "url(css/projects/Pizza/pizza_analysis.png)";
+                dot1.style.backgroundColor = "#0c0c37";
+                dot2.style.backgroundColor = "#0c0c37";
+                dot3.style.backgroundColor = "#BCDDC7";
+                dot4.style.backgroundColor = "#0c0c37";
+                break;
+
+            case 4:
+                slides.style.backgroundImage = "url(css/projects/Pizza/pizza_styletile.png)";
+                dot1.style.backgroundColor = "#0c0c37";
+                dot2.style.backgroundColor = "#0c0c37";
+                dot3.style.backgroundColor = "#0c0c37";
+                dot4.style.backgroundColor = "#BCDDC7";
+
+                break;
+
+
+        }
+
+    }
+
+</script>
+
+</html>
